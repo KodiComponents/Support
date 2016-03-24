@@ -1,6 +1,6 @@
 <?php
 
-namespace KodiComponents\Contracts;
+namespace KodiComponents\Support\Contracts;
 
 interface Initializable
 {

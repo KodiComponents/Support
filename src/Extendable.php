@@ -1,6 +1,6 @@
 <?php
 
-namespace KodiComponents;
+namespace KodiComponents\Support;
 
 use Illuminate\Support\Collection;
 use KodiComponents\Contracts\ExtensionInterface;

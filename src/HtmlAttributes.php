@@ -1,6 +1,6 @@
 <?php
 
-namespace KodiComponents;
+namespace KodiComponents\Support;
 
 trait HtmlAttributes
 {
