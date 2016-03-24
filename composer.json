@@ -1,0 +1,27 @@
+{
+  "name": "kodicomponents/support",
+  "description": "The KodiCMS Support package.",
+  "homepage": "http://kodicms.com",
+  "keywords": [
+    "laravel",
+    "kodicms",
+    "navigation",
+    "menu"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pavel Buchnev",
+      "email": "butschster@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "KodiComponents\\": "src/"
+    }
+  }
+}
