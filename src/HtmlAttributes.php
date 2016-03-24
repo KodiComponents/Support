@@ -141,23 +141,9 @@ trait HtmlAttributes
     }
 
     /**
-     * @param string|array $value
-     *
      * @return string
      */
-    protected function prepareHtmlAttributeValue($value)
-    {
-        if (is_array($value)) {
-            $value = implode(' ', $value);
-        }
-
-        return $value;
-    }
-
-    /**
-     * @return string
-     */
-    protected function htmlAttributesToString()
+    public function htmlAttributesToString()
     {
         $html = [];
 
@@ -182,5 +168,19 @@ trait HtmlAttributes
         return count($html) > 0
             ? ' '.implode(' ', $html)
             : '';
+    }
+
+    /**
+     * @param string|array $value
+     *
+     * @return string
+     */
+    protected function prepareHtmlAttributeValue($value)
+    {
+        if (is_array($value)) {
+            $value = implode(' ', $value);
+        }
+
+        return $value;
     }
 }
