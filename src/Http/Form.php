@@ -33,13 +33,9 @@ abstract class Form
      */
     public function save()
     {
-        if ($this->isValid()) {
-            $this->persist();
+        $this->isValid();
 
-            return true;
-        }
-
-        return false;
+        return $this->persist();
     }
 
     /**
@@ -91,8 +87,6 @@ abstract class Form
     public function isValid()
     {
         $this->validate($this->request, $this->rules(), $this->labels());
-
-        return true;
     }
 
     /**
