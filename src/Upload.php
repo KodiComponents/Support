@@ -36,6 +36,10 @@ trait Upload
         });
 
         static::deleting(function (Model $model) {
+            if (in_array(\Illuminate\Database\Eloquent\SoftDeletes::class, trait_uses_recursive($model)) && !$model->forceDeleting) {
+                return;
+            }
+
             foreach ($model->getUploadFields() as $key) {
                 $filePath = $model->{$key.'_path'};
                 if (! empty($filePath) and file_exists($filePath)) {
