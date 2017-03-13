@@ -78,7 +78,7 @@ trait HtmlAttributes
      */
     public function replaceHtmlAttribute($key, $attribute)
     {
-        $attribute                  = $this->attributeHtmlElement($attribute);
+        $attribute                  = $this->prepareHtmlAttributeValue($attribute);
         $this->htmlAttributes[$key] = $attribute;
 
         return $this;
