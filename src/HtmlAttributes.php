@@ -109,7 +109,7 @@ trait HtmlAttributes
     }
 
     /**
-     * @param srtring $key
+     * @param string $key
      *
      * @return bool
      */
