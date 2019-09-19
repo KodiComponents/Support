@@ -2,6 +2,8 @@
 
 namespace KodiComponents\Support;
 
+use Illuminate\Support\Arr;
+
 trait HtmlAttributes
 {
     /**
@@ -30,7 +32,7 @@ trait HtmlAttributes
      */
     public function getHtmlAttribute($key, $default = null)
     {
-        return array_get($this->getHtmlAttributes(), $key, $default);
+        return Arr::get($this->getHtmlAttributes(), $key, $default);
     }
 
     /**

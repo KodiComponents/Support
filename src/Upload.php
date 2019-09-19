@@ -3,6 +3,7 @@
 namespace KodiComponents\Support;
 
 use File;
+use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 
@@ -13,7 +14,7 @@ trait Upload
     {
         static::updating(function (Model $model) {
             foreach ($model->getUploadFields() as $key) {
-                $originalValue = array_get($model->original, $key);
+                $originalValue = Arr::get($model->original, $key);
 
                 if (
                     ! empty($originalValue)
@@ -108,7 +109,7 @@ trait Upload
             and
             ($this->hasCast($field, 'image') or $this->isImageUploadedFile($file))
         ) {
-            $settings = array_get($this->getUploadSettings(), $field, []);
+            $settings = Arr::get($this->getUploadSettings(), $field, []);
 
             $image = \Intervention\Image\Facades\Image::make($file);
 
